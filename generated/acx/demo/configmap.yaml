@@ -1,14 +1,9 @@
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
+apiVersion: v1
+data:
+  platform.bomid: acx-platform-34-C
+  schema.bomid: acx-schema-67-C
+  service.bomid: acx-service-723-C
+kind: ConfigMap
 metadata:
-  name: nginix
+  name: bom-configmap
   namespace: default
-spec:
-  releaseName: nginix
-  chart:
-    name: nginx
-    repository: https://charts.bitnami.com/bitnami
-    version: 11.0.1
-  helmVersion: v3
-  values:
-    replicaCount: 1
