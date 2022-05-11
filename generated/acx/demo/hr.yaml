@@ -1,0 +1,14 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: nginix
+  namespace: default
+spec:
+  releaseName: nginix
+  chart:
+    name: nginx
+    repository: https://charts.bitnami.com/bitnami
+    version: 11.0.1
+  helmVersion: v3
+  values:
+    replicaCount: 1
